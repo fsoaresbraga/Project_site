@@ -1,0 +1,147 @@
+img {
+    display: block;
+    max-width: 100%;
+  }
+  .preview {
+    overflow: hidden;
+    width: 160px; 
+    height: 160px;
+    margin: 10px;
+    border: 1px solid red;
+  }
+  .modal-lg{
+    max-width: 1000px !important;
+  }
+  .file > input[type='file'] {
+    display: none
+  }
+  
+  .file > label {
+      font-weight: 300;
+      cursor: pointer;
+      outline: 0;
+      user-select: none;
+      border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+      border-style: solid;
+      border-radius: 4px;
+      background-color: hsl(0, 0%, 100%);
+      color: hsl(0, 0%, 29%);
+      align-items: center;
+      align-items: center;
+      width: 35px;
+  }
+  
+  
+  
+  .file--upload > label {
+    color: #fff;
+    border-color:#17a2b8;
+    background-color:#17a2b8;
+  }
+  .carousel-item {
+    padding: 15vw 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+
+  #owl-demo .item{
+    background: #42bdc2;
+    padding: 30px 0px;
+    margin: 10px;
+    color: #FFF;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;
+  }
+  
+  /* to remove slide effect  css */
+   .animated  {
+        -webkit-animation-duration : 0 ms  !important;
+        animation-duration : 0 ms  !important;
+        -webkit-animation-fill-mode : both  !important;
+        animation-fill-mode : both  !important;
+      }  
+      
+      
+      .fadeOut  {
+        -webkit-animation-name : fadeOut  ;
+        animation-name : fadeOut  ;
+      }  
+      @-webkit-keyframes  fadeOut  {
+        0% {
+          opacity : 0   ;
+        }  
+        100% {
+          opacity : 0   ;
+        }  
+      }
+      @keyframes  fadeOut  {
+        0% {
+          opacity : 0   ;
+        }  
+        100% {
+          opacity : 0   ;
+        }  
+      }
+
+      .file-upload-wrapper {
+        position: relative;
+        width: 100%;
+        height: 60px;
+      }
+      .file-upload-wrapper:after {
+        content: attr(data-text);
+        font-size: 18px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #fff;
+        padding: 10px 15px;
+        display: block;
+        width: calc(100% - 40px);
+        pointer-events: none;
+        z-index: 20;
+        height: 40px;
+        line-height: 40px;
+        color: #999;
+        border-radius: 5px 10px 10px 5px;
+        font-weight: 300;
+      }
+      .file-upload-wrapper:before {
+        content: "Upload";
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: inline-block;
+        height: 60px;
+        background: #4daf7c;
+        color: #fff;
+        font-weight: 700;
+        z-index: 25;
+        font-size: 16px;
+        line-height: 60px;
+        padding: 0 15px;
+        text-transform: uppercase;
+        pointer-events: none;
+        border-radius: 0 5px 5px 0;
+      }
+      .file-upload-wrapper:hover:before {
+        background: #3d8c63;
+      }
+      .file-upload-wrapper input {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 99;
+        height: 40px;
+        margin: 0;
+        padding: 0;
+        display: block;
+        cursor: pointer;
+        width: 100%;
+      }
