@@ -15,9 +15,12 @@ class CreateChurchesTable extends Migration
     {
         Schema::create('churches', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->uuid('user_id')->nullable(false);
+            $table->string('code')->nullable(true);
             $table->string('name');
             $table->string('city');
             $table->string('state');
+            $table->string('phone')->nullable(true);
             $table->string('latitude');
             $table->string('longitude');
             $table->boolean('status');

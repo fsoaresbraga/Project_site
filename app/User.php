@@ -2,13 +2,20 @@
 
 namespace App;
 
+use App\Models\Traits\UuidTrait;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, UuidTrait;
+    
+
+    public $incrementing = false;
+
+    protected $keyType = 'uuid';
+
     protected $table = 'users';
     /**
      * The attributes that are mass assignable.
@@ -37,7 +44,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getAuthPassword() {
-        return $this->senha;
-    }
+
 }

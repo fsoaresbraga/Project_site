@@ -11,11 +11,9 @@
   <link href="{{ asset('libs/adm/css/icheck-bootstrap/icheck-bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ asset('libs/adm/css/dist/css/adminlte.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/adm/css/style.css') }}" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('libs/adm/css/sweetalert2/sweetalert2.css')}}">
-  <link rel="stylesheet" href="{{ asset('libs/adm/css/cropper/cropper.css')}}"/>
-  <script src="{{ asset('libs/adm/js/cropper/cropper.js')}}"></script>
-  <script src="{{ asset('libs/adm/js/moment/moment.js') }}"></script>
-  <script src="{{ asset('libs/adm/js/jquery/jquery.min.js') }}"></script>
+  <link href="{{ asset('libs/adm/css/sweetalert2/sweetalert2.css')}}">
+  <link href="{{asset('libs/adm/css/datatables/jquery.dataTables.min.css')}}">
+  <link href="{{ asset('libs/adm/css/cropper/cropper.css')}}"/>
 
  
     <title>
@@ -53,7 +51,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="{{route('admin.dashboard')}}" class="brand-link">
-            <span class="brand-text font-weight-light"><b>Tech </b>Week</span>
+            <span class="brand-text font-weight-light"><b>CCB </b>Ribeirão Preto</span>
             </a>
 
             <!-- Sidebar -->
@@ -73,18 +71,18 @@
                 </li>
 
                 <li class="nav-item has-treeview menu-open">
-                    <a href="{{route('admin.feira')}}" class="nav-link">
-                        <i class="nav-icon fas fa-file-word"></i>
+                    <a href="{{route('admin.church.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-building"></i>
                         <p>
-                            Feira de Ideias
+                            Casas de Oração
                         </p>
                     </a>
                 </li>
                 <li class="nav-item has-treeview menu-open">
-                    <a href="{{route('admin.ideathon')}}" class="nav-link">
-                        <i class="nav-icon fas fa-file-word"></i>
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
                         <p>
-                            Ideathon
+                            Usuários
                         </p>
                     </a>
                 </li>
@@ -109,22 +107,23 @@
              </div>
         </div>    
     </div>
-      
+    <script src="{{ asset('libs/adm/js/moment/moment.js') }}"></script>
+    <script src="{{ asset('libs/adm/js/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('libs/adm/js/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('libs/adm/js/dist/js/adminlte.min.js') }}"></script>
     <script src="{{ asset('libs/adm/js/sweetalert2/sweetalert2.all.js')}}"></script>  
- 
+    <script src="{{asset('libs/adm/js/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{ asset('assets/adm/js/app.js') }}"></script>
     <script>
-        @if(Session::has('message'))
+       @if(Session::has('message'))
            swal.fire({
                 position: "top-center",
                 icon: "{{ Session::get('alert-type') }}",
-                title: "{{ Session::get('message') }}",
+                html: "<small style='font-size:15px'>{{ Session::get('message')}}</small>",
                 showConfirmButton: false,
-                timer: 2300
+                timer: 2800
             })
-
+            
         @endif
     </script>
 

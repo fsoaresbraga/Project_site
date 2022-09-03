@@ -16,11 +16,11 @@ class CreateDaysWorshipsTable extends Migration
         Schema::create('days_worships', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('church_id')->nullable(false);
-            $table->string('Sunday')->nullable(true);
+            $table->string('sunday')->nullable(true);
             $table->string('youth_meeting')->nullable(true);
-            $table->string('Tuesday')->nullable(true);
-            $table->string('Wednesday')->nullable(true);
-            $table->string('Thursday')->nullable(true);
+            $table->string('tuesday')->nullable(true);
+            $table->string('wednesday')->nullable(true);
+            $table->string('thursday')->nullable(true);
             $table->string('friday')->nullable(true);
             $table->string('saturday')->nullable(true);
             $table->timestamps();

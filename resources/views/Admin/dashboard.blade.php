@@ -11,13 +11,13 @@
          <!-- small box -->
          <div class="small-box bg-info">
             <div class="inner">
-               <h3>{{$feira}}</h3>
-               <p>Feira de Ideias</p>
+               <h3>0</h3>
+               <p>Casas de Oração</p>
             </div>
             <div class="icon">
-               <i class="fas fa-users"></i>
+               <i class="fas fa-building"></i>
             </div>
-            <a href="#" class="small-box-footer">Incrições feira de ideias <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{route('admin.church.index')}}" class="small-box-footer">Cadastrar Casa de Oração <i class="fas fa-arrow-circle-right"></i></a>
          </div>
       </div>
       <!-- ./col -->
@@ -26,12 +26,12 @@
          <div class="small-box bg-success">
             <div class="inner">
                <h3>0</h3>
-               <p>ideathon</p>
+               <p>usuários</p>
             </div>
             <div class="icon">
-               <i class="fas fa-brain"></i>
+               <i class="fas fa-users"></i>
             </div>
-            <a href="#" class="small-box-footer">Incrições ideathon <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="#" class="small-box-footer">Cadastro de Usuário <i class="fas fa-arrow-circle-right"></i></a>
          </div>
       </div>
 

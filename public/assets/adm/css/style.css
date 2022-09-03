@@ -35,8 +35,8 @@ img {
   
   .file--upload > label {
     color: #fff;
-    border-color:#17a2b8;
-    background-color:#17a2b8;
+    border-color:#d4d9e2;
+    background-color:#d4d9e2;
   }
   .carousel-item {
     padding: 15vw 0;
@@ -145,3 +145,4 @@ img {
         cursor: pointer;
         width: 100%;
       }
+

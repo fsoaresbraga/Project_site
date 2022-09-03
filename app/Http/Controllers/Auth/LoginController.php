@@ -20,9 +20,9 @@ class LoginController extends Controller
             'email' => 'required|email',
             'password' => 'required|string',
         ]);
-       
+        
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'status' => 1])) {
-            return redirect()->intended('admin/dashboard');
+            return redirect()->route('admin.dashboard');
         }
 
         $notification = array(

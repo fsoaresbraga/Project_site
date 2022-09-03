@@ -21,7 +21,7 @@
             @yield('content')
         </main>
     </div>
-
+    
     <script src="{{ asset('libs/adm/js/jquery/jquery.min.js') }}" defer></script>
     <script src="{{ asset('libs/adm/js/bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('libs/adm/js/dist/js/adminlte.min.js') }}" defer></script>
@@ -31,14 +31,12 @@
            swal.fire({
                 position: "top-center",
                 icon: "{{ Session::get('alert-type') }}",
-                title: "{{ Session::get('message') }}",
+                html: "<small style='font-size:15px'>{{ Session::get('message')}}</small>",
                 showConfirmButton: false,
-                timer: 2300
+                timer: 2800
             })
-
+            
         @endif
-
-           
     </script>
 </body>
 </html>

@@ -13,7 +13,7 @@
     </div>
     <div class="row">
         <div class="col-md-12 text-center mb-3">
-            <img src="{{ asset('assets/adm/images/logo_tech.png') }}" style="width:160px" class="image-responsive"/>
+            <img src="{{ asset('assets/adm/images/logo.png') }}" style="width:160px" class="image-responsive"/>
         </div>
     </div>
 
