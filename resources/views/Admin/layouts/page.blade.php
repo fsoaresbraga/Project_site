@@ -13,9 +13,7 @@
   <link href="{{ asset('assets/adm/css/style.css') }}" rel="stylesheet">
   <link href="{{ asset('libs/adm/css/sweetalert2/sweetalert2.css')}}">
   <link href="{{asset('libs/adm/css/datatables/jquery.dataTables.min.css')}}">
-  <link href="{{ asset('libs/adm/css/cropper/cropper.css')}}"/>
-
- 
+  
     <title>
         @yield('title')
     </title>
@@ -107,12 +105,12 @@
              </div>
         </div>    
     </div>
-    <script src="{{ asset('libs/adm/js/moment/moment.js') }}"></script>
     <script src="{{ asset('libs/adm/js/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('libs/adm/js/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('libs/adm/js/dist/js/adminlte.min.js') }}"></script>
     <script src="{{ asset('libs/adm/js/sweetalert2/sweetalert2.all.js')}}"></script>  
     <script src="{{asset('libs/adm/js/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('libs/adm/js/mask/jquery.mask.min.js')}}"></script>
     <script src="{{ asset('assets/adm/js/app.js') }}"></script>
     <script>
        @if(Session::has('message'))

@@ -75,7 +75,7 @@
                         </td>
                         <td>{{\Carbon\Carbon::parse($church->updated_at)->format('d/m/Y H:i')}}</td>
                         <td>
-                            <a href="#" class="btn btn-outline-secondary btn-icon-text"> <i class="fas fa-edit"></i></a>
+                            <a href="{{route('admin.church.show', $church->id)}}" class="btn btn-outline-secondary btn-icon-text"> <i class="fas fa-edit"></i></a>
                         </td>
 
                     </tr>

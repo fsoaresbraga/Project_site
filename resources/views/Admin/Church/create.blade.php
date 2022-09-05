@@ -140,21 +140,11 @@
                 </div>
                
                 <div class="col-3">
-                    <label for="new_monday">Reunião de jovens</label>
-                    <div class="row">
-                        <div class="col-md-7">
-                            <div class="form-group">
-                                <input type="text" name="day_young" class="form-control" placeholder="Dia" value="{{old('day_young')}}">        
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="form-group">
-                                <input type="text" name="hour_young" class="form-control" placeholder="Horário" value="{{old('hour_young')}}">        
-                            </div>
-                        </div>
+                    <label for="">Reunião de jovens</label>
+                    <div class="form-group">
+                        <input type="text" name="day_young" class="form-control" placeholder="Dia / Horário" value="{{old('day_young')}}">        
                     </div>
-                    
-                    
+                    </div>
                 </div>
                 
 

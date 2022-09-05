@@ -18,6 +18,9 @@ class ChurchController extends Controller
     public function index() {
 
         $churches = $this->model_church::with('daysWorship')->where('status', 1)->get();
+
+        return response()->json(['churches' => $churches]);
+        
         return view('Admin.Church.index', compact('churches'));
     }
 
@@ -60,7 +63,7 @@ class ChurchController extends Controller
 
         $days_worship = $church->daysWorship()->create([
             'Sunday' => $request->Sunday,
-            'youth_meeting' => $request->day_young.'-'.$request->hour_young,
+            'youth_meeting' => $request->day_young,
             'Tuesday' => $request->Tuesday,
             'Wednesday' => $request->Wednesday, 
             'Thursday' => $request->Thursday, 
@@ -81,5 +84,91 @@ class ChurchController extends Controller
             'alert-type' => 'info'
         );
         return back()->with($notification);
+    }
+
+    public function show($id) {
+
+        $church = $this->model_church::
+                    with('daysWorship')
+                    ->where('status', 1)
+                    ->find($id);
+
+        if($church) {
+
+            return view('Admin.Church.show', compact('church'));
+        }
+
+        $notification = array(
+            'message' => 'Casa Oração não Encontrada.',
+            'alert-type' => 'info'
+        );
+
+        return redirect()->route('admin.church.index')->with($notification);
+    }
+
+
+
+    public function update($id, Request $request) {
+
+        $validator = Validator::make($request->all(), [
+            'code' => 'required',
+            'name' => 'required',
+            'city' => 'required',
+            'state' => 'required|min:2|max:2'
+        ]);
+
+        if ($validator->fails()) {
+
+            $notification = array(
+                'message' => 'Verifique os Campos',
+                'alert-type' => 'info'
+            );
+
+            return back()->with($notification)->withInput()->withErrors($validator->errors());
+        }
+
+        $church = $this->model_church::
+                    with('daysWorship')
+                    ->where('status', 1)
+                    ->find($id);
+        
+        if($church) {
+
+            $church->update([
+                'user_id' => auth()->user()->id,
+                'code' => $request->code,
+                'name' => $request->name,
+                'city' => $request->city,
+                'state' => $request->state,
+                'latitude' => $request->latitude,
+                'longitude' => $request->longitude,
+                'phone' => $request->phone,
+                'status'=> 1
+            ]);
+
+            $church->daysWorship()->update([
+                'Sunday' => $request->Sunday,
+                'youth_meeting' => $request->day_young,
+                'Tuesday' => $request->Tuesday,
+                'Wednesday' => $request->Wednesday, 
+                'Thursday' => $request->Thursday, 
+                'friday' => $request->friday, 
+                'saturday' => $request->saturday
+            ]);
+
+            
+            $notification = array(
+                'message' => 'Casa de Oração Editada.',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->route('admin.church.index')->with($notification);
+        }
+
+        $notification = array(
+            'message' => 'Casa Oração não Encontrada.',
+            'alert-type' => 'info'
+        );
+        return redirect()->route('admin.church.index')->with($notification);
     }
 }

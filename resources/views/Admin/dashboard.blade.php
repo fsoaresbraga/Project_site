@@ -11,7 +11,7 @@
          <!-- small box -->
          <div class="small-box bg-info">
             <div class="inner">
-               <h3>0</h3>
+               <h3>{{$count_church}}</h3>
                <p>Casas de Oração</p>
             </div>
             <div class="icon">
